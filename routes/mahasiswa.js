@@ -10,6 +10,7 @@ router.post("/", async (req, res) => {
     nama: req.body.nama,
     alamat: req.body.alamat,
     tanggalLahir: req.body.tanggalLahir,
+    tempatLahir: req.body.tempatLahir,
   });
 
   try {
