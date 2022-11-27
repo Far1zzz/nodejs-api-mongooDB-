@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-api-mongoodb-",
+  "version": "1.0.0",
+  "description": "Belajar nodeJS mongodb",
+  "main": "app.js",
+  "scripts": {
+    "far1z": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Far1zzz/nodejs-api-mongooDB-.git"
+  },
+  "keywords": [
+    "mongoDB",
+    "css"
+  ],
+  "author": "farizz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Far1zzz/nodejs-api-mongooDB-/issues"
+  },
+  "homepage": "https://github.com/Far1zzz/nodejs-api-mongooDB-#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.3",
+    "nodemon": "^2.0.20"
+  }
+}
