@@ -2,5 +2,5 @@
   "version": 2,
   "name": "far1z-api",
   "builds": [{ "src": "app.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/.*)", "dest": "/app.js" }]
+  "routes": [{ "src": "/(.*)", "dest": "/app.js" }]
 }
