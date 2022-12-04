@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 require("dotenv/config");
 
 // (6) middleware body-parser
@@ -13,6 +14,7 @@ app.use(
   })
 );
 app.use(bodyParser.json());
+app.use(cors());
 
 // (7) import routes
 const mahasiswaRoutes = require("./routes/mahasiswa");
