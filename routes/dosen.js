@@ -57,7 +57,7 @@ router.put("/:dosenId", async (req, res) => {
 router.delete("/:dosenId", async (req, res) => {
   try {
     // delete datanya
-    const dosen = await Dosen.deleteone({
+    const dosen = await Dosen.deleteOne({
       _id: req.params.dosenId,
     });
     // response
