@@ -18,7 +18,9 @@ router.post("/", async (req, res) => {
     const mahasiswa = await mahasiswaPost.save();
     // response
     res.json(mahasiswa);
+    // response(201, mahasiswa, `Success`, res) +
   } catch (error) {
+    // res.status(401).json({message: error.message})
     res.json({ message: error });
   }
 });

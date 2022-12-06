@@ -22,7 +22,6 @@ const dosenRoutes = require("./routes/dosen");
 
 // (8) app.use (mendaftarkan middleware baru ke Express)
 app.use("/mahasiswa", mahasiswaRoutes);
-
 app.use("/dosen", dosenRoutes);
 
 // (3) koneksi ke database mongodb
