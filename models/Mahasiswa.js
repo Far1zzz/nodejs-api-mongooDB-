@@ -19,13 +19,6 @@ const MahasiswaSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  NIM:{
-    type:t
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
 });
 
 module.exports = mongoose.model("Mahasiswa", MahasiswaSchema);
