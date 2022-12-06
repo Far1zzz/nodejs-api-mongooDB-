@@ -2,6 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const Mahasiswa = require("../models/Mahasiswa");
+const response = require("../config/response");
 
 // Create
 router.post("/", async (req, res) => {
@@ -17,11 +18,12 @@ router.post("/", async (req, res) => {
     // simpan data
     const mahasiswa = await mahasiswaPost.save();
     // response
-    res.json(mahasiswa);
+    // res.json(mahasiswa);
+    response(201, mahasiswa, "input data success", res);
     // response(201, mahasiswa, `Success`, res) +
   } catch (error) {
-    // res.status(401).json({message: error.message})
-    res.json({ message: error });
+    res.status(400).json({ message: error.message });
+    // res.json({ message: error });
   }
 });
 
@@ -29,9 +31,11 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const mahasiswa = await Mahasiswa.find();
-    res.json(mahasiswa);
+    // res.json(mahasiswa);
+    response(200, mahasiswa, "get data success", res);
   } catch (error) {
-    res.json({ message: error });
+    // res.json({ message: error });
+    res.status(404).json({ message: error.message });
   }
 });
 
@@ -52,9 +56,11 @@ router.put("/:mahasiswaId", async (req, res) => {
       data
     );
     // response
-    res.json(mahasiswa);
+    // res.json(mahasiswa);
+    response(200, mahasiswa, "update data success", res);
   } catch (error) {
-    res.json({ message: error });
+    // res.json({ message: error });
+    res.status(400).json({ message: error.message });
   }
 });
 
@@ -66,9 +72,11 @@ router.delete("/:mahasiswaId", async (req, res) => {
       _id: req.params.mahasiswaId,
     });
     // response
-    res.json(mahasiswa);
+    // res.json(mahasiswa);
+    response(200, mahasiswa, "delete data success", res);
   } catch (error) {
-    res.json({ message: error });
+    // res.json({ message: error });
+    res.status(400).json({ message: error.message });
   }
 });
 module.exports = router;
