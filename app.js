@@ -24,6 +24,9 @@ const dosenRoutes = require("./routes/dosen");
 app.use("/mahasiswa", mahasiswaRoutes);
 app.use("/dosen", dosenRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Belajar Tolol");
+});
 // (3) koneksi ke database mongodb
 mongoose.connect(process.env.DB_CONNECTION, {
   useNewUrlParser: true,
