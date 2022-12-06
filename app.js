@@ -20,10 +20,6 @@ app.use(cors());
 const mahasiswaRoutes = require("./routes/mahasiswa");
 const dosenRoutes = require("./routes/dosen");
 
-app.get("/", req, (res) => {
-  res.send("Belajar, Jangan cuma bisa copas");
-});
-
 // (8) app.use (mendaftarkan middleware baru ke Express)
 app.use("/mahasiswa", mahasiswaRoutes);
 app.use("/dosen", dosenRoutes);
