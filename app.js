@@ -13,6 +13,10 @@ app.use(
     extended: true,
   })
 );
+app.get("/", (req, res) => {
+  res.send("Belajar Jangan cuma tau copas");
+});
+
 app.use(bodyParser.json());
 app.use(cors());
 
