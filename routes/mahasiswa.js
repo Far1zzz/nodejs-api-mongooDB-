@@ -4,8 +4,11 @@ const router = express.Router();
 const Mahasiswa = require("../models/Mahasiswa");
 const response = require("../config/response");
 
+// import verify teken
+const verifyToken = require("../config/verifyToken");
+
 // Create
-router.post("/", async (req, res) => {
+router.post("/", verifyToken, async (req, res) => {
   // tampung input mahasiswa
   const mahasiswaPost = new Mahasiswa({
     nama: req.body.nama,
@@ -27,8 +30,8 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Read Data
-router.get("/", async (req, res) => {
+// Read Data + verify token
+router.get("/", verifyToken, async (req, res) => {
   try {
     const mahasiswa = await Mahasiswa.find();
     // res.json(mahasiswa);
@@ -40,7 +43,7 @@ router.get("/", async (req, res) => {
 });
 
 // Update Data
-router.put("/:mahasiswaId", async (req, res) => {
+router.put("/:mahasiswaId", verifyToken, async (req, res) => {
   // tampung input mahasiswa
   const data = {
     nama: req.body.nama,
@@ -65,7 +68,7 @@ router.put("/:mahasiswaId", async (req, res) => {
 });
 
 // delete data
-router.delete("/:mahasiswaId", async (req, res) => {
+router.delete("/:mahasiswaId", verifyToken, async (req, res) => {
   try {
     // delete Data
     const mahasiswa = await Mahasiswa.deleteOne({
